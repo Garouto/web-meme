@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>r/Pendajos </title>
+    <link href="./images/pepeIcon.png" rel="icon" type="image/png">
+    <link href="./images/pepeIcon.ico" rel="icon" type="image/X_icon">
+</head>
+<body>
+    <header>
+        <div class="something">
+            <img src="./images/pepeLogo.webp" alt="r/pendajos">
+            <i class="fa fa-hamburger" id="openMenu"></i>
+        </div>
+        
+        <ul class="navBar">
+            <li><a href="#heroSection">Home</a></li>
+            <li><a href="#howToBuySection">How to buy</a></li>
+            <li><a href="https://www.dextools.io/app/en/solana/pair-explorer/12tNRJBRkMoSKL155i3eGmHvtrrZ68Z8wpfBrM5PAT4h?t=1724194222628">dextools</a></li> 
+        </ul>
+    </header>
+    <main>
+        <div id="heroSection" >
+            <div class="heroText">
+                <h1>They call me $r/pendajos,</h1>
+                <p>The meme token that makes fun of the celebs you love to hate”<br> </p>
+                <p>
+                    Contract<br>
+                    <code>2oqcKBU8i5oN9h3zLUdZpnxMA8UU4gVZixVdLMEzpump</code>
+                </p>
+                <a href="https://www.dextools.io/app/en/solana/pair-explorer/12tNRJBRkMoSKL155i3eGmHvtrrZ68Z8wpfBrM5PAT4h?t=1724194040572"><button class="heroButton">Buy now</button></a>
+            </div>
+            <img src="./images/pepemaga.webp" alt="r/Pendajos laughting at other memecoins">
+        </div>
+        
+        <div id="howToBuySection">
+            <h2>How to buy</h2>
+            <div class="figuresContainer">
+                
+                <figure>
+                    <img src="./images/wallet.png.webp" alt="Descriptive text for the image">
+                    <figcaption>Create a wallet Phantom</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="./images/tokens.png.webp" alt="Descriptive text for the image">
+                    <figcaption>Get some Sol</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="./images/uniswap (2).png.webp" alt="Descriptive text for the image">
+                    <figcaption>Go to dextools.</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="./images/pepeHeroSection.webp" alt="Descriptive text for the image">
+                    <figcaption>Swap Sol for $r/Pendajos</figcaption>
+                </figure>
+
+            </div>
+        </div>
+
+        <div id="quoteSection">
+        </div>
+
+        <div id="callToActionSection">
+            <div>
+                <div class="ctaText">
+                    <h3>vibe and hold</h3>
+                    <p>Zero taxes</p>
+                </div>
+                <a href="https://www.dextools.io/app/en/solana/pair-explorer/12tNRJBRkMoSKL155i3eGmHvtrrZ68Z8wpfBrM5PAT4h?t=1724194442451"><button>Buy $r/pendajos</button></a> 
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 by r/pendajos. All rights reserved!</p>
+        <a href="https://x.com/" target="_blank">
+            <img src="./images/X_icon.svg.png" alt="X_icon">
+        </a>
+    </footer>
+
+    <script>
+        const navBar = document.querySelector('.navBar');
+        const navBarToggle = document.querySelector('.something #openMenu');
+
+        navBarToggle.addEventListener('click', () => {
+            navBar.classList.toggle('active');
+        });
+
+        const code = document.querySelector('code');
+        code.addEventListener('click', () => {
+            navigator.clipboard.writeText(code.innerText);
+
+            const content = code.innerText;
+            code.innerText = 'Copied!';
+            setTimeout(() => {
+                code.innerText = content;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
