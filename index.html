@@ -19,10 +19,16 @@
         <ul class="navBar">
             <li><a href="#heroSection">Home</a></li>
             <li><a href="#howToBuySection">How to buy</a></li>
-            <li><a href="https://www.dextools.io/app/en/solana/pair-explorer/12tNRJBRkMoSKL155i3eGmHvtrrZ68Z8wpfBrM5PAT4h?t=1724194222628">dextools</a></li> 
-        </ul>
+            <li><a href="https://www.dextools.io/app/en/solana/pair-explorer/12tNRJBRkMoSKL155i3eGmHvtrrZ68Z8wpfBrM5PAT4h?t=1724194222628">dextools</a></li>
+            <li><a href="https://t.me/rpendejos">Telegram</a></li> 
+            <li><a href="https://x.com/pendajosCoin">X.com</a></li>
+            <li><a href="mailto:Pendajoscoin@Gmail.com">Contact us</a></li>  
+        </ul>   
     </header>
     <main>
+        <div class="container">
+            
+        </div>
         <div id="heroSection" >
             <div class="heroText">
                 <h1>They call me $r/pendajos,</h1>
@@ -37,33 +43,75 @@
         </div>
         
         <div id="howToBuySection">
-            <h2>How to buy</h2>
+            <h2></h2>
             <div class="figuresContainer">
                 
                 <figure>
-                    <img src="./images/wallet.png.webp" alt="Descriptive text for the image">
-                    <figcaption>Create a wallet Phantom</figcaption>
+                    <img src="./images/pendajos/meme1.webp" alt="Descriptive text for the image">
                 </figure>
                 
                 <figure>
-                    <img src="./images/tokens.png.webp" alt="Descriptive text for the image">
-                    <figcaption>Get some Sol</figcaption>
+                    <img src="./images/pendajos/meme2.webp" alt="Descriptive text for the image">
                 </figure>
                 
                 <figure>
-                    <img src="./images/uniswap (2).png.webp" alt="Descriptive text for the image">
-                    <figcaption>Go to dextools.</figcaption>
+                    <img src="./images/pendajos/meme3.webp" alt="Descriptive text for the image">
                 </figure>
                 
                 <figure>
-                    <img src="./images/pepeHeroSection.webp" alt="Descriptive text for the image">
-                    <figcaption>Swap Sol for $r/Pendajos</figcaption>
+                    <img src="./images/pendajos/meme4.webp" alt="Descriptive text for the image">
                 </figure>
 
             </div>
         </div>
 
-        <div id="quoteSection">
+        <div>
+            <div class="wrapper-roadmap">
+                <h1>Roadmap</h1>
+
+                <div class="roadmap-phase">
+                    Phase 1: Meme
+                    <br>
+                    Phase 2: Vibe and HODL
+                    <br>
+                    Phase 3: Meme Takeover                                        
+                </div>
+            </div>
+            <div class="wrapper-phases">
+                <div class="phases">
+                    <h2>Phase 1</h2>
+                    <div>
+                        <ul>
+                            <li><h6>Launch</h6></li>
+                            <li><h6>CoinGecko/ Coinmarketcap&nbsp;Listings</h6></li>
+                            <li><h6>1,000+ Holders</h6></li>
+                            <li><h6>Get $r/Pendajos Trending on twitter with our memetic power</h6></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phases">
+                    <h2>Phase 2</h2>
+                    <div>
+                        <ul>
+                            <li><h6>Community Partnerships</h6></li>
+                            <li><h6>Formation of token gated discord group for holders, more details tha</h6></li>
+                            <li><h6>CEX Listings</h6></li>
+                            <li><h6>10,000+holders</h6></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phases">
+                    <h2>Phase 3</h2>
+                    <div>
+                        <ul>
+                            <li><h6>r/Pendajos Dex dapp</h6></li>
+                            <li><h6>T1 Exchange Listings 100,000+ holders</h6></li>
+                            <li><h6>Android and apple meme app   </h6></li>
+                            <li><h6>Meme Takeover</h6></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="callToActionSection">
@@ -79,7 +127,7 @@
 
     <footer>
         <p>© 2024 by r/pendajos. All rights reserved!</p>
-        <a href="https://x.com/" target="_blank">
+        <a href="https://x.com/pendajosCoin" target="_blank">
             <img src="./images/X_icon.svg.png" alt="X_icon">
         </a>
     </footer>
@@ -102,6 +150,93 @@
                 code.innerText = content;
             }, 1000);
         });
+
+
+        const container = document.querySelector('.container');
+        let animationInterval;
+
+        function createFallingImage() {
+            const image = document.createElement('div');
+            image.classList.add('falling-image');
+            image.style.setProperty('--random-x', Math.random());
+            return image;
+        }
+
+        function resetPosition(image) {
+            image.style.top = '-50px';
+            image.style.left = `calc(100% * var(--random-x))`;
+        }
+
+        function startFallingAnimation() {
+            const image = createFallingImage();
+            container.appendChild(image);
+
+            resetPosition(image);
+
+            image.addEventListener('animationiteration', () => {
+                resetPosition(image);
+            }
+            );
+        }
+
+        function clearImages() {
+            const images = document.querySelectorAll('.falling-image');
+            images.forEach(function(image) {
+                image.remove();
+            });
+        }
+
+        function startAnimation() {
+            clearImages();
+            animationInterval = setInterval(startFallingAnimation, 500);
+        }
+
+        function stopAnimation() {
+            clearInterval(animationInterval);
+        }
+
+        // Check if the tab is active on initial load
+        if (!document.hidden) {
+            startAnimation();
+        }
+
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                stopAnimation();
+            } else {
+                startAnimation();
+            }
+        });
+
+        const figuresContainer = document.querySelector('.figuresContainer');
+        const memes = [
+            './images/pendajos/meme1.webp',
+            './images/pendajos/meme2.webp',
+            './images/pendajos/meme3.webp',
+            './images/pendajos/meme4.webp',
+            './images/pendajos/meme5.webp',
+            './images/pendajos/meme6.webp',
+        ];
+
+        let lastMemeIndex = figuresContainer.children.length;
+        let lastFigureIndex = 0;
+
+        function getRandomMeme() {
+            if (lastMemeIndex >= memes.length) {
+                lastMemeIndex = 0;
+            }
+            return memes[lastMemeIndex++];
+        }
+
+        setInterval(() => {
+            const figure = figuresContainer.children[lastFigureIndex];
+            figure.querySelector('img').src = getRandomMeme();
+            lastFigureIndex++;
+            if (lastFigureIndex >= (figuresContainer.children.length)) {
+                lastFigureIndex = 0;
+            }
+        }, 10_000);
+
     </script>
 </body>
 </html>
